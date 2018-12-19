@@ -1,0 +1,10 @@
+
+<h1>Comment Form</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="저장"" />
+</form>
