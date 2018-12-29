@@ -1,0 +1,21 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        {% bootstrap_css %}
+        {% block extra_head %}
+        {% endblock %}
+    </head>
+    <body>
+        {% bootstrap_messages %}
+
+        {% block content %}
+        {% endblock %}
+
+        {% bootstrap_javascript jquery="full" %}
+        {% block extra_body %}
+        {% endblock %}
+    </body>
+</html>

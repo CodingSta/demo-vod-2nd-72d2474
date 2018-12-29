@@ -1,28 +1,31 @@
+{% extends "myapp/layout.html" %}
 
-<h2>{{ post.title }}</h2>
+{% block content %}
+    <h2>{{ post.title }}</h2>
 
-{{ post.content|safe }}
+    {{ post.content|safe }}
 
-<hr/>
+    <hr/>
 
-<a href="{% url "post_list" %}">
-    목록으로
-</a>
-<a href="{% url "comment_new" post.pk %}">
-    댓글 쓰기
-</a>
+    <a href="{% url "post_list" %}">
+        목록으로
+    </a>
+    <a href="{% url "comment_new" post.pk %}">
+        댓글 쓰기
+    </a>
 
-<hr/>
+    <hr/>
 
-<ul>
-{% for comment in post.comment_set.all %}
-    <li>
-        {{ comment.message }}
-        by {{ comment.author }}
-        <small>{{ comment.ip }}</small>
-        <a href="{% url "comment_edit" post.pk comment.pk %}">
-            (수정)
-        </a>
-    </li>
-{% endfor %}
-</ul>
+    <ul>
+    {% for comment in post.comment_set.all %}
+        <li>
+            {{ comment.message }}
+            by {{ comment.author }}
+            <small>{{ comment.ip }}</small>
+            <a href="{% url "comment_edit" post.pk comment.pk %}">
+                (수정)
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

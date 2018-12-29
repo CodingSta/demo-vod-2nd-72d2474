@@ -1,4 +1,6 @@
+{% extends "myapp/layout.html" %}
 
+{% block content %}
 <table>
     <tbody>
         {% for post in post_list %}
@@ -19,3 +21,4 @@
         {% endfor %}
     </tbody>
 </table>
+{% endblock %}

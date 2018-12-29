@@ -125,3 +125,13 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
+from django.contrib.messages import constants
+MESSAGE_TAGS = {
+    constants.DEBUG: 'secondary',
+    constants.ERROR: 'danger',
+}
+
+# settings/dev.py에서 지정하시기를 추천
+MESSAGE_LEVEL = constants.DEBUG
