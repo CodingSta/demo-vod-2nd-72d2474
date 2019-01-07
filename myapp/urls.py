@@ -9,4 +9,6 @@ urlpatterns = [
     path('<int:pk>/delete/', views.post_delete, name='post_delete'),
     path('<int:post_pk>/comment/new/', views.comment_new, name='comment_new'),
     path('<int:post_pk>/comment/<int:pk>/edit/', views.comment_edit, name='comment_edit'),
+
+    path('api/post', views.post_list_create),
 ]

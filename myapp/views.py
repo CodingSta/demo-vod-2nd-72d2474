@@ -116,3 +116,14 @@ def comment_edit(request, post_pk, pk):
     return render(request, template_name, {
         'form': form,
     })
+
+
+
+from rest_framework.generics import ListCreateAPIView
+from .serializers import PostSerializer
+
+class PostListCreateAPIView(ListCreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+post_list_create = PostListCreateAPIView.as_view()
